@@ -1,21 +1,32 @@
-const { mitem, pemasukan_dokumen, pengeluaran_dokumen } = require('../models')
+const { mitem, pemasukan_dokumen, pengeluaran_dokumen, tgi, tgr } = require('../models')
+const { body, validationResult } = require('express-validator');
 
 module.exports = {
     mitemCreate: async (req, res) => {
-        const data = await mitem.create({
-            id_mitem: req.body.id_mitem,
-            code_mitem: req.body.code_mitem,
-            name_mitem: req.body.name_mitem,
-            code_muom: req.body.code_muom,
-            item_type: req.body.item_type,
-            comp_code: req.body.comp_code,
-            note: req.body.note,
-        });
+        try {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.status(400).json({ errors: errors.array(), message: "Periksa kembali data anda!" });
+            }
+            const data = await mitem.create({
+                id_mitem: req.body.id_mitem,
+                code_mitem: req.body.code_mitem,
+                name_mitem: req.body.name_mitem,
+                code_muom: req.body.code_muom,
+                item_type: req.body.item_type,
+                comp_code: req.body.comp_code,
+                note: req.body.note,
+            });
 
-        return res.json({
-            message: "Register berhasil, Silahkan Login",
-            data: data
-        }, 200)
+            return res.json({
+                message: "Data berhasil di kirimkan",
+                data: data
+            }, 200)
+        } catch (error) {
+            return res.json({
+                message: "Periksa kembali data anda!"
+            }, 400)
+        }
     },
     pemasukanDokumenCreate: async (req, res) => {
         const data = await pemasukan_dokumen.create({
@@ -68,7 +79,7 @@ module.exports = {
         }, 200)
     },
     tgiCreate: async (req, res) => {
-        const data = await pengeluaran_dokumen.create({
+        const data = await tgi.create({
             no: req.body.no,
             tdate: req.body.tdate,
             id_mitem: req.body.id_mitem,
@@ -91,7 +102,7 @@ module.exports = {
         }, 200)
     },
     tgrCreate: async (req, res) => {
-        const data = await pengeluaran_dokumen.create({
+        const data = await tgr.create({
             no: req.body.no,
             tdate: req.body.tdate,
             id_mitem: req.body.id_mitem,
