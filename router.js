@@ -90,9 +90,9 @@ router.post('/tgr', [
 
 //Delete Data
 router.delete('/mitemdelete/:code_mitem', deleteController.mitemDelete)
-router.delete('/pemasukan_dokumen/:nomoraju', deleteController.pemasukanDokumenDelete)
-router.delete('/pengeluaran_dokumen/:nomoraju', deleteController.pengeluaranDokumenDelete)
-router.delete('/tgi/:no', deleteController.mitemDelete)
-router.delete('/tgr/:no', deleteController.mitemDelete)
+router.delete('/pemasukan_dokumendelete/:nomoraju', deleteController.pemasukanDokumenDelete)
+router.delete('/pengeluaran_dokumendelete/:nomoraju', deleteController.pengeluaranDokumenDelete)
+router.delete('/tgidelete/:no', deleteController.tgiDelete)
+router.delete('/tgrdelete/:no', deleteController.tgrDelete)
 
 module.exports = router
