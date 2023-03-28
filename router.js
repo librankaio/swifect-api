@@ -70,7 +70,7 @@ router.post('/tgi', [
     body('item_type').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('item_type').notEmpty(),
     body('note').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('note').notEmpty(),
     body('wip').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('wip').notEmpty(),
-], createController.pemasukanDokumenCreate)
+], createController.tgiCreate)
 router.post('/tgr', [
     body('no').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('no').notEmpty(),
     body('tdate').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('tdate').notEmpty(),
@@ -86,7 +86,7 @@ router.post('/tgr', [
     body('item_type').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('item_type').notEmpty(),
     body('note').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('note').notEmpty(),
     body('wip').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('wip').notEmpty(),
-], createController.pemasukanDokumenCreate)
+], createController.tgrCreate)
 
 //Delete Data
 router.delete('/mitemdelete/:code_mitem', deleteController.mitemDelete)
