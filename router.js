@@ -34,7 +34,7 @@ router.post('/pemasukan_dokumen', [
     body('nilai_barang').trim().optional({ checkFalsy: true }).isNumeric().withMessage('Only Number are Allowed'), body('nilai_barang').notEmpty(),
     body('nilai_barang_usd').trim().optional({ checkFalsy: true }).isNumeric().withMessage('Only Number are Allowed'), body('nilai_barang_usd').notEmpty(),
     body('comp_code').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('comp_code').notEmpty(),
-    body('note').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('note').notEmpty(),
+    // body('note').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('note').notEmpty(),
     body('matauang').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('matauang').notEmpty(),
 ], createController.pemasukanDokumenCreate)
 router.post('/pengeluaran_dokumen', [
@@ -52,7 +52,6 @@ router.post('/pengeluaran_dokumen', [
     body('nilai_barang').trim().optional({ checkFalsy: true }).isNumeric().withMessage('Only Number are Allowed'), body('nilai_barang').notEmpty(),
     body('nilai_barang_usd').trim().optional({ checkFalsy: true }).isNumeric().withMessage('Only Number are Allowed'), body('nilai_barang_usd').notEmpty(),
     body('comp_code').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('comp_code').notEmpty(),
-    body('note').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('note').notEmpty(),
     body('matauang').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('matauang').notEmpty(),
 ], createController.pengeluaranDokumenCreate)
 router.post('/tgi', [
@@ -68,7 +67,6 @@ router.post('/tgi', [
     body('code_mwhse').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('code_mwhse').notEmpty(),
     body('comp_code').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('comp_code').notEmpty(),
     body('item_type').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('item_type').notEmpty(),
-    body('note').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('note').notEmpty(),
     body('wip').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('wip').notEmpty(),
 ], createController.tgiCreate)
 router.post('/tgr', [
@@ -84,7 +82,6 @@ router.post('/tgr', [
     body('code_mwhse').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('code_mwhse').notEmpty(),
     body('comp_code').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('comp_code').notEmpty(),
     body('item_type').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('item_type').notEmpty(),
-    body('note').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('note').notEmpty(),
     body('wip').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('wip').notEmpty(),
 ], createController.tgrCreate)
 
