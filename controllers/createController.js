@@ -15,6 +15,8 @@ module.exports = {
                 code_muom: req.body.code_muom,
                 item_type: req.body.item_type,
                 comp_code: req.body.comp_code,
+                dptanggal: req.body.dptanggal,
+                bpbtanggal: req.body.bpbtanggal,
                 note: req.body.note,
             });
 
