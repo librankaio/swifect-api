@@ -44,7 +44,7 @@ router.post('/pengeluaran_dokumen', [
     body('dptanggal').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('dptanggal').notEmpty(),
     body('bpbnomor').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('bpbnomor').notEmpty(),
     body('bpbtanggal').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('bpbtanggal').notEmpty(),
-    body('pembeli_penerima').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('pemasok_pengirim').notEmpty(),
+    body('pembeli_penerima').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('pembeli_penerima').notEmpty(),
     body('kode_barang').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('kode_barang').notEmpty(),
     body('nama_barang').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('nama_barang').notEmpty(),
     body('sat').trim().optional({ checkFalsy: true }).isString().withMessage('Only String are Allowed'), body('sat').notEmpty(),
