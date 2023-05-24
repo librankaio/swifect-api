@@ -27,6 +27,7 @@ module.exports = {
             }, 200)
         } catch (error) {
             return res.json({
+                errors: errors.array(),
                 status: "error",
                 message: "Periksa kembali data anda!"
             }, 400)
@@ -87,6 +88,7 @@ module.exports = {
             }, 200)
         } catch (error) {
             return res.json({
+                errors: errors.array(),
                 status: "error",
                 message: "Periksa kembali data anda!"
             }, 400)
@@ -147,6 +149,7 @@ module.exports = {
             }, 200)
         } catch (error) {
             return res.json({
+                errors: errors.array(),
                 status: "error",
                 message: "Periksa kembali data anda!"
             }, 400)
@@ -258,6 +261,7 @@ module.exports = {
             }, 200)
         } catch (error) {
             return res.json({
+                errors: errors.array(),
                 status: "error",
                 message: "Periksa kembali data anda!"
             }, 400)
